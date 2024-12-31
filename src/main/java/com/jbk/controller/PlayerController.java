@@ -38,8 +38,8 @@ public class PlayerController {
 	}
 //---------------------------------------------------------
 		@GetMapping( "/api/player/{playerId}")
-	public Player getPlayerById(@PathVariable("playerId") int playerId) {
-			Player playerById = playerService.getPlayerById(playerId);
+	public Object getPlayerById(@PathVariable("playerId") int playerId) {
+			Object playerById = playerService.getPlayerById(playerId);
 			return playerById;	
 		}
 //----------------------------------------------------------------

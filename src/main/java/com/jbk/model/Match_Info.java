@@ -1,6 +1,11 @@
 package com.jbk.model;
 
-public class Match {
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
+public class Match_Info {
+	@Id
     private int matchId; // Unique identifier for each match
     private String teamOneId; // ID of the first team in the match
     private String teamTwoId; // ID of the second team in the match
@@ -9,11 +14,11 @@ public class Match {
     private String result; // Result of the match (e.g., 'Team1 won', 'Team2 won', 'Draw')
 
     // Default constructor
-    public Match() {
+    public Match_Info() {
     }
 
     // Parameterized constructor
-    public Match(int matchId, String teamOneId, String teamTwoId, String date, String venue, String result) {
+    public Match_Info(int matchId, String teamOneId, String teamTwoId, String date, String venue, String result) {
         this.matchId = matchId;
         this.teamOneId = teamOneId;
         this.teamTwoId = teamTwoId;

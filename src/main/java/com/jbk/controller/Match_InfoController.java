@@ -12,48 +12,52 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.jbk.model.Match;
-import com.jbk.service.MatchService;
+import com.jbk.model.Match_Info;
+import com.jbk.service.Match_InfoService;
 
 @RestController
-public class MatchController {
+public class Match_InfoController {
 
 	@Autowired
-	private MatchService matchService;
+	private Match_InfoService matchService;
 
 	@PostMapping("/api/matchs")
-	public String addMatch(@RequestBody Match match) {
-		String msg = matchService.addMatch(match);
+	public String addMatch(@RequestBody Match_Info match) {
+		String msg = matchService.addMatch_Info(match);
 		return msg;
 	}
-//---------------------------------------------------------
+
+//-----------------------------------------------------------------
 	@GetMapping("/api/matchs")
 	public Object getAllMatchs() {
-		List<Match> listMatch = matchService.getAllMatchs();
+		List<Match_Info> listMatch = matchService.getAllMatch_Infos();
 		if (listMatch != null) {
 			return listMatch;
 		} else {
 			return "No Matchs Available";
 		}
 	}
+
 //---------------------------------------------------------
-		@GetMapping( "/api/match/{matchId}")
-	public Match getMatchById(@PathVariable("matchId") int matchId) {
-			Match matchById = matchService.getMatchById(matchId);
-			return matchById;	
-		}
+	@GetMapping("/api/match/{matchId}")
+	public Object getMatchById(@PathVariable("matchId") int matchId) {
+		Object matchById = matchService.getMatch_InfoById(matchId);
+		return matchById;
+	}
+
 //----------------------------------------------------------------
-		@PutMapping("/api/match/{Id}")
-		public Object updateMatchById(@PathVariable("Id") int Id , @RequestBody Match MatchList) {
-		Object updatematchById = matchService.updatematchById(Id, MatchList);
-			return updatematchById;
-		}
+	@PutMapping("/api/match/{Id}")
+	public Object updateMatchById(@PathVariable("Id") int Id, @RequestBody Match_Info MatchList) {
+		Object updatematchById = matchService.updatematch_infoById(Id, MatchList);
+		return updatematchById;
+	}
+
 //------------------------------------------------------------------------
-		@DeleteMapping("/api/Deletematch")
-		public String deletMatchById(@RequestParam int id) {
-			
-			String deletMatchById = matchService.deletMatchById(id);
-			return deletMatchById;
-			
-		}
+	@DeleteMapping("/api/Deletematch")
+	public String deletMatchById(@RequestParam int id) {
+
+		String deletMatchById = matchService.deletMatch_InfoById(id);
+		return deletMatchById;
+
+	}
 }

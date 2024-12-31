@@ -38,8 +38,8 @@ public class TeamController {
 	}
 //---------------------------------------------------------
 		@GetMapping( "/api/team/{teamId}")
-	public Team getTeamById(@PathVariable("teamId") String teamId) {
-			Team teamById = teamservice.getTeamById(teamId);
+	public Object getTeamById(@PathVariable("teamId") String teamId) {
+			Object teamById = teamservice.getTeamById(teamId);
 			return teamById;	
 		}
 //----------------------------------------------------------------

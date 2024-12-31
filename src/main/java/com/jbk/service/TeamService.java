@@ -27,8 +27,8 @@ public class TeamService {
 		return listTeam;
 	}
 //-------------------------------------------------------------
-public Team getTeamById(String teamId) {
-	Team getteamByid = teamDao.getTeamByid(teamId);
+public Object getTeamById(String teamId) {
+	Object getteamByid = teamDao.getTeamByid(teamId);
 	return getteamByid;
 	
 }

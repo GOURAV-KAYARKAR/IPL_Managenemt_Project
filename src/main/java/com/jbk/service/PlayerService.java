@@ -29,8 +29,8 @@ public class PlayerService {
 	}
 
 //-------------------------------------------------------------
-	public Player getPlayerById(int playerId) {
-		Player getplayerByid = playerDao.getPlayerByid(playerId);
+	public Object getPlayerById(int playerId) {
+		Object getplayerByid = playerDao.getPlayerByid(playerId);
 		return getplayerByid;
 
 	}

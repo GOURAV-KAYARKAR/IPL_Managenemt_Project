@@ -1,7 +1,12 @@
 package com.jbk.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Player {
-    private int playerId; // Unique identifier for each player
+    @Id
+	private int playerId; // Unique identifier for each player
     private String name; // Name of the player
     private int age; // Age of the player
     private String teamId; // ID of the team the player belongs to

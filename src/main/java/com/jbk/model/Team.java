@@ -1,6 +1,12 @@
 package com.jbk.model;
 
+import javax.persistence.Entity;
+import javax.persistence.Id;
+
+@Entity
 public class Team {
+	
+	@Id
     private String teamId; // Unique identifier for each team
     private String teamName; // Name of the team
     private String city; // City the team belongs to

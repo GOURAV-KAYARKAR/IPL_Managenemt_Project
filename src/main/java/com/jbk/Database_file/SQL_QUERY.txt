@@ -1,0 +1,93 @@
+INSERT INTO `team` (teamId, teamName, city, coach) VALUES
+('MI', 'Mumbai Indians', 'Mumbai', 'Mark Boucher'),
+('CSK', 'Chennai Super Kings', 'Chennai', 'MS Dhoni'),
+('RCB', 'Royal Challengers Bangalore', 'Bangalore', 'Faf du Plessis'),
+('DC', 'Delhi Capitals', 'Delhi', 'Ricky Ponting'),
+('KKR', 'Kolkata Knight Riders', 'Kolkata', 'Shreyas Iyer'),
+('RR', 'Rajasthan Royals', 'Jaipur', 'Sanju Samson'),
+('PBKS', 'Punjab Kings', 'Mohali', 'Shikhar Dhawan'),
+('SRH', 'Sunrisers Hyderabad', 'Hyderabad', 'Aiden Markram'),
+('LSG', 'Lucknow Super Giants', 'Lucknow', 'KL Rahul'),
+('GT', 'Gujarat Titans', 'Ahmedabad', 'Hardik Pandya');
+
+
+
+INSERT INTO `match_info` (matchId, teamOneId, teamTwoId, date, venue, result) VALUES
+(1, 'MI', 'CSK', '2024-04-01', 'Wankhede Stadium, Mumbai', 'MI won by 5 wickets'),
+(2, 'RCB', 'KKR', '2024-04-02', 'M. Chinnaswamy Stadium, Bangalore', 'RCB won by 10 runs'),
+(3, 'DC', 'RR', '2024-04-03', 'Arun Jaitley Stadium, Delhi', 'RR won by 8 wickets'),
+(4, 'PBKS', 'SRH', '2024-04-04', 'Punjab Cricket Association Stadium, Mohali', 'PBKS won by 15 runs'),
+(5, 'LSG', 'GT', '2024-04-05', 'BRSABV Ekana Cricket Stadium, Lucknow', 'GT won by 6 wickets');
+
+
+
+INSERT INTO `player` (playerId, name, age, teamId, role) VALUES
+-- Mumbai Indians (MI)
+(1, 'Rohit Sharma', 37, 'MI', 'Batsman'),
+(2, 'Jasprit Bumrah', 29, 'MI', 'Bowler'),
+(3, 'Kieron Pollard', 36, 'MI', 'All-rounder'),
+(4, 'Ishan Kishan', 25, 'MI', 'Wicketkeeper-Batsman'),
+(5, 'Trent Boult', 34, 'MI', 'Bowler'),
+
+-- Chennai Super Kings (CSK)
+(6, 'MS Dhoni', 43, 'CSK', 'Wicketkeeper-Batsman'),
+(7, 'Ravindra Jadeja', 35, 'CSK', 'All-rounder'),
+(8, 'Moeen Ali', 36, 'CSK', 'All-rounder'),
+(9, 'Ambati Rayudu', 38, 'CSK', 'Batsman'),
+(10, 'Deepak Chahar', 31, 'CSK', 'Bowler'),
+
+-- Royal Challengers Bangalore (RCB)
+(11, 'Virat Kohli', 35, 'RCB', 'Batsman'),
+(12, 'Faf du Plessis', 39, 'RCB', 'Batsman'),
+(13, 'Glenn Maxwell', 35, 'RCB', 'All-rounder'),
+(14, 'Wanindu Hasaranga', 27, 'RCB', 'Bowler'),
+(15, 'Mohammad Siraj', 29, 'RCB', 'Bowler'),
+
+-- Delhi Capitals (DC)
+(16, 'David Warner', 37, 'DC', 'Batsman'),
+(17, 'Prithvi Shaw', 24, 'DC', 'Batsman'),
+(18, 'Rishabh Pant', 26, 'DC', 'Wicketkeeper-Batsman'),
+(19, 'Kagiso Rabada', 28, 'DC', 'Bowler'),
+(20, 'Axar Patel', 30, 'DC', 'All-rounder'),
+
+-- Kolkata Knight Riders (KKR)
+(21, 'Shreyas Iyer', 29, 'KKR', 'Batsman'),
+(22, 'Andre Russell', 36, 'KKR', 'All-rounder'),
+(23, 'Sunil Narine', 35, 'KKR', 'Bowler'),
+(24, 'Venkatesh Iyer', 29, 'KKR', 'All-rounder'),
+(25, 'Rahul Tripathi', 32, 'KKR', 'Batsman'),
+
+-- Rajasthan Royals (RR)
+(26, 'Sanju Samson', 29, 'RR', 'Wicketkeeper-Batsman'),
+(27, 'Jos Buttler', 33, 'RR', 'Wicketkeeper-Batsman'),
+(28, 'Yashasvi Jaiswal', 22, 'RR', 'Batsman'),
+(29, 'Rajasthan Express', 28, 'RR', 'Bowler'),
+(30, 'Shimron Hetmyer', 27, 'RR', 'Batsman'),
+
+-- Punjab Kings (PBKS)
+(31, 'Shikhar Dhawan', 38, 'PBKS', 'Batsman'),
+(32, 'Arshdeep Singh', 25, 'PBKS', 'Bowler'),
+(33, 'Liam Livingstone', 30, 'PBKS', 'All-rounder'),
+(34, 'Rahul Chahar', 24, 'PBKS', 'Bowler'),
+(35, 'Jonny Bairstow', 34, 'PBKS', 'Wicketkeeper-Batsman'),
+
+-- Sunrisers Hyderabad (SRH)
+(36, 'Kane Williamson', 34, 'SRH', 'Batsman'),
+(37, 'Abhishek Sharma', 23, 'SRH', 'All-rounder'),
+(38, 'Bhuvneshwar Kumar', 34, 'SRH', 'Bowler'),
+(39, 'Aiden Markram', 29, 'SRH', 'All-rounder'),
+(40, 'Glenn Phillips', 27, 'SRH', 'Wicketkeeper-Batsman'),
+
+-- Lucknow Super Giants (LSG)
+(41, 'KL Rahul', 32, 'LSG', 'Wicketkeeper-Batsman'),
+(42, 'Deepak Hooda', 28, 'LSG', 'All-rounder'),
+(43, 'Krishnappa Gowtham', 35, 'LSG', 'All-rounder'),
+(44, 'Marcus Stoinis', 34, 'LSG', 'All-rounder'),
+(45, 'Quinton de Kock', 31, 'LSG', 'Wicketkeeper-Batsman'),
+
+-- Gujarat Titans (GT)
+(46, 'Hardik Pandya', 30, 'GT', 'All-rounder'),
+(47, 'Rashid Khan', 25, 'GT', 'Bowler'),
+(48, 'Shubman Gill', 24, 'GT', 'Batsman'),
+(49, 'Lockie Ferguson', 33, 'GT', 'Bowler'),
+(50, 'David Miller', 34, 'GT', 'Batsman');
