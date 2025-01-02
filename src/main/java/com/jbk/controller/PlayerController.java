@@ -26,6 +26,7 @@ public class PlayerController {
 		String msg = playerService.addPlayer(player);
 		return msg;
 	}
+
 //---------------------------------------------------------
 	@GetMapping("/api/players")
 	public Object getAllPlayers() {
@@ -36,24 +37,27 @@ public class PlayerController {
 			return "No Players Available";
 		}
 	}
+
 //---------------------------------------------------------
-		@GetMapping( "/api/player/{playerId}")
+	@GetMapping("/api/player/{playerId}")
 	public Object getPlayerById(@PathVariable("playerId") int playerId) {
-			Object playerById = playerService.getPlayerById(playerId);
-			return playerById;	
-		}
+		Object playerById = playerService.getPlayerById(playerId);
+		return playerById;
+	}
+
 //----------------------------------------------------------------
-		@PutMapping("/api/player/{Id}")
-		public Object updatePlayerById(@PathVariable("Id") int Id , @RequestBody Player PlayerList) {
+	@PutMapping("/api/player/{Id}")
+	public Object updatePlayerById(@PathVariable("Id") int Id, @RequestBody Player PlayerList) {
 		Object updateplayerById = playerService.updateplayerById(Id, PlayerList);
-			return updateplayerById;
-		}
+		return updateplayerById;
+	}
+
 //------------------------------------------------------------------------
-		@DeleteMapping("/api/Deleteplayer")
-		public String deletPlayerById(@RequestParam int id) {
-			
-			String deletPlayerById = playerService.deletPlayerById(id);
-			return deletPlayerById;
-			
-		}
+	@DeleteMapping("/api/Deleteplayer")
+	public String deletPlayerById(@RequestParam int id) {
+
+		String deletPlayerById = playerService.deletPlayerById(id);
+		return deletPlayerById;
+
+	}
 }

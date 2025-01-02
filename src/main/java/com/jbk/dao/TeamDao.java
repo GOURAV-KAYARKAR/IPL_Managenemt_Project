@@ -15,106 +15,74 @@ public class TeamDao {
 
 	@Autowired
 	private SessionFactory sessionFactory;
-	
-	
-//	List<Team> teams = new ArrayList<Team>();
-//	TeamDao(){
-//		
-//		  teams.add(new Team("MI", "Mumbai Indians", "Mumbai", "Mahela Jayawardene"));
-//	        teams.add(new Team("CSK", "Chennai Super Kings", "Chennai", "Stephen Fleming"));
-//		
-//	}
-	
 
 	public String addTeam(Team team) {
-		
+
 		Session openSession = sessionFactory.openSession();
 		openSession.save(team);
 		return "Team Added Successuflly";
-		
-//		teams.add(team);
-//		return "Team Added sussfully";
-		}
-//
+
+	}
+
 // -----------------------------------------
 	public List<Team> getAllTeams() {
-		List<Team>list = null;
-Session Session = sessionFactory.openSession();
-Criteria criteria = Session.createCriteria(Team.class);		
- list = criteria.list();
- 
- return list;
-//		return teams;
+		List<Team> list = null;
+		Session Session = sessionFactory.openSession();
+		Criteria criteria = Session.createCriteria(Team.class);
+		list = criteria.list();
+
+		return list;
+
 	}
 //-------------------------------------------------
 
 	public Object getTeamByid(String teamId) {
 		Session Session = sessionFactory.openSession();
-Team DBTeam=Session.get(Team.class, teamId); 
-try {
-	if ( DBTeam !=null) {
-		Session.beginTransaction().commit();
-		return DBTeam;
-		
-	}else {
-		return "Team Not Found ";
-	}
-} catch (Exception e) {
-return "SOMETHING WENTS WRONG";
-}
-		
-//		for (Team team : teams) {
-//			if (team.getTeamId().equals(teamId)) {
-//				return team;
-//			}
-//
-//		}
-//		return null;
+		Team DBTeam = Session.get(Team.class, teamId);
+		try {
+			if (DBTeam != null) {
+				Session.beginTransaction().commit();
+				return DBTeam;
+
+			} else {
+				return "Team Not Found ";
+			}
+		} catch (Exception e) {
+			return "SOMETHING WENTS WRONG";
+		}
+
 	}
 //-----------------------------------------------------------
 
 	public Object updateTeamById(String id, Team teamList) {
 		Session Session = sessionFactory.openSession();
-		
-		Team DBTeam=Session.get(Team.class, id); 
+
+		Team DBTeam = Session.get(Team.class, id);
 		try {
 			if (DBTeam != null) {
 				Session.saveOrUpdate(id, teamList);
 				Session.beginTransaction().commit();
-				
-				return DBTeam; 
-			}else return "Team Not Updated";
-			
+
+				return DBTeam;
+			} else
+				return "Team Not Updated";
+
 		} catch (Exception e) {
 			return "SOMETHING WENTS WRONG";
 			// TODO: handle exception
 		}
-		
-//		for (Team team : teams) {
-//			if (team.getTeamId().equals(id)) {
-//			int index = teams.indexOf(team);
-//			teams.set(index, teamList);
-//			
-////			if (team.getTeamId().equals(id)) {
-////				team.setTeamName(teamList.getTeamName());
-////				team.setCity(teamList.getCity());
-////				team.setCoach(teamList.getCoach());
-//			return teamList;
-//			}
-//			}
-//		return "Update Id not found";
-		}
-		
-	
+
+	}
+
 //------------------------------------------------------------------
 
 	public String deletTeamById(String id) {
 		Session openSession = sessionFactory.openSession();
 		Team DBteam = openSession.get(Team.class, id);
 		try {
-			if (DBteam !=null) {
+			if (DBteam != null) {
 				openSession.remove(DBteam);
-				return"Team deleted successfully";
+				return "Team deleted successfully";
 			} else {
 				return " Team Not Found";
 			}
@@ -122,14 +90,6 @@ return "SOMETHING WENTS WRONG";
 			return "SOMETHING WENTS WRONG";
 			// TODO: handle exception
 		}
-		
-		
-//		for (Team team : teams) {
-//			if (team.getTeamId().equals(id)) {
-//				teams.remove(team);
-//			}
-//		}
-//		return "Team deleted Successfully";
 
 	}
 //-------------------------------------------------------------------

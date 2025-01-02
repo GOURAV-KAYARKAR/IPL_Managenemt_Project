@@ -26,6 +26,7 @@ public class TeamController {
 		String msg = teamservice.addTeam(team);
 		return msg;
 	}
+
 //---------------------------------------------------------
 	@GetMapping("/api/teams")
 	public Object getAllTeams() {
@@ -36,24 +37,27 @@ public class TeamController {
 			return "No Teams Available";
 		}
 	}
+
 //---------------------------------------------------------
-		@GetMapping( "/api/team/{teamId}")
+	@GetMapping("/api/team/{teamId}")
 	public Object getTeamById(@PathVariable("teamId") String teamId) {
-			Object teamById = teamservice.getTeamById(teamId);
-			return teamById;	
-		}
+		Object teamById = teamservice.getTeamById(teamId);
+		return teamById;
+	}
+
 //----------------------------------------------------------------
-		@PutMapping("/api/team/{Id}")
-		public Object updateTeamById(@PathVariable("Id") String Id , @RequestBody Team TeamList) {
+	@PutMapping("/api/team/{Id}")
+	public Object updateTeamById(@PathVariable("Id") String Id, @RequestBody Team TeamList) {
 		Object updateteamById = teamservice.updateteamById(Id, TeamList);
-			return updateteamById;
-		}
+		return updateteamById;
+	}
+
 //------------------------------------------------------------------------
-		@DeleteMapping("/api/Deleteteam")
-		public String deletTeamById(@RequestParam String id) {
-			
-			String deletTeamById = teamservice.deletTeamById(id);
-			return deletTeamById;
-			
-		}
+	@DeleteMapping("/api/Deleteteam")
+	public String deletTeamById(@RequestParam String id) {
+
+		String deletTeamById = teamservice.deletTeamById(id);
+		return deletTeamById;
+
+	}
 }

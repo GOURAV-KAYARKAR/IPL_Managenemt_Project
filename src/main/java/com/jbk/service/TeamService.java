@@ -21,31 +21,30 @@ public class TeamService {
 		// TODO Auto-generated method stub
 
 	}
+
 //----------------------------------------------------------
 	public List<Team> getAllTeams() {
-		List<Team> listTeam=teamDao.getAllTeams();
+		List<Team> listTeam = teamDao.getAllTeams();
 		return listTeam;
 	}
+
 //-------------------------------------------------------------
-public Object getTeamById(String teamId) {
-	Object getteamByid = teamDao.getTeamByid(teamId);
-	return getteamByid;
-	
-}
+	public Object getTeamById(String teamId) {
+		Object getteamByid = teamDao.getTeamByid(teamId);
+		return getteamByid;
+
+	}
 //-------------------------------------------------------------
 
-public Object updateteamById(String id , Team teamList) {
-	return teamDao.updateTeamById(id, teamList);
-}
-
+	public Object updateteamById(String id, Team teamList) {
+		return teamDao.updateTeamById(id, teamList);
+	}
 
 //----------------------------------------------------------
-public String deletTeamById(String id) {
-	String deletTeamById = teamDao.deletTeamById(id);
-	return deletTeamById;
-	
-}
+	public String deletTeamById(String id) {
+		String deletTeamById = teamDao.deletTeamById(id);
+		return deletTeamById;
 
-
+	}
 
 }

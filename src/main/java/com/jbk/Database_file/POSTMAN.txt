@@ -1,0 +1,155 @@
+198_IPL
+﻿
+
+Team
+﻿
+
+POST
+AddTeam
+localhost:8080/api/teams
+﻿
+
+Body
+raw (json)
+json
+{ 
+"teamId": "MI", 
+"teamName": "Mumbai Indians", 
+"city": "Mumbai", 
+"coach": "Mahela Jayawardene" 
+}
+GET
+GetAllTeams
+localhost:8080/api/teams
+﻿
+
+GET
+TeamById
+localhost:8080/api/team/MI
+﻿
+
+PUT
+UpdateTeamById
+localhost:8080/api/team/MI
+﻿
+
+Body
+raw (json)
+json
+{ 
+"teamId": "MI", 
+"teamName": "Indians", 
+"city": "Mumbai", 
+"coach": "Mahela Jayawardene" 
+}
+DELETE
+DeleteTeamBy Id
+localhost:8080/api/Deleteteam?id="MI"
+﻿
+
+Query Params
+id
+"MI"
+Player
+﻿
+
+POST
+AddPlayer
+localhost:8080/api/players
+﻿
+
+Body
+raw (json)
+json
+{ 
+"playerId": 1, 
+"name": "Rohit Sharma", 
+"age": 33, 
+"teamId": "1", 
+"role": "Batsman" 
+}
+GET
+GetAllPlayer
+localhost:8080/api/players
+﻿
+
+GET
+PlayerById
+localhost:8080/api/player/2
+﻿
+
+PUT
+UpdatePlayerById
+localhost:8080/api/player/1
+﻿
+
+Body
+raw (json)
+json
+{ 
+"playerId": 1, 
+"name": "Rohit Sharma", 
+"age": 34, 
+"teamId": 1, 
+"role": "Opening Batsman" 
+}
+DELETE
+DeletePlayerBy Id
+localhost:8080/api/Deleteplayer?id=1
+﻿
+
+Query Params
+id
+1
+Matches
+﻿
+
+POST
+AddMatch
+localhost:8080/api/matchs
+﻿
+
+Body
+raw (json)
+json
+ {
+"matchId": 1, 
+"team1": "MI", 
+"team2": "CSK", 
+"date": "2024-05-01", 
+"venue": "Wankhede Stadium", 
+"result": "Mumbai Indians won" 
+} 
+GET
+GetAllMatch
+localhost:8080/api/matchs
+﻿
+
+GET
+MatchById
+localhost:8080/api/match/1
+﻿
+
+PUT
+UpdatematchById
+localhost:8080/api/match/1
+﻿
+
+Body
+raw (json)
+json
+{ 
+"playerId": 1, 
+"name": "Rohit Sharma", 
+"age": 34, 
+"teamId": 1, 
+"role": "Opening Batsman" 
+}
+DELETE
+DeletematchBy Id
+localhost:8080/api/Deletematch?id=1
+﻿
+
+Query Params
+id
+1

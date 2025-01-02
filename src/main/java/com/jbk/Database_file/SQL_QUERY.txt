@@ -91,3 +91,11 @@ INSERT INTO `player` (playerId, name, age, teamId, role) VALUES
 (48, 'Shubman Gill', 24, 'GT', 'Batsman'),
 (49, 'Lockie Ferguson', 33, 'GT', 'Bowler'),
 (50, 'David Miller', 34, 'GT', 'Batsman');
+
+
+
+
+
+
+
+

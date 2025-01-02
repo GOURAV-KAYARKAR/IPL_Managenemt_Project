@@ -16,31 +16,18 @@ public class Match_InfoDao {
 	@Autowired
 	private SessionFactory sessionFactory;
 
-//	List<Match_Info> matchs = new ArrayList<Match_Info>();
-//
-//	public Match_InfoDao() {
-//		matchs.add(new Match_Info(1, "MI", "CSK", "2024-05-01", "Wankhede Stadium", "Mumbai Indians won"));
-//
-//	}
-
 	public String addMatch_Info(Match_Info match) {
 		Session openSession = sessionFactory.openSession();
 		openSession.save(match);
 		return "Match Added Successuflly";
-
-//		matchs.add(match);
-//		return "Match_Info Added sussfully";
 	}
-
 	// -----------------------------------------
 	public List<Match_Info> getAllMatch_Infos() {
 		List<Match_Info> list = null;
 		Session Session = sessionFactory.openSession();
 		Criteria criteria = Session.createCriteria(Match_Info.class);
 		list = criteria.list();
-
 		return list;
-//		return matchs;
 	}
 //-------------------------------------------------
 
@@ -58,13 +45,7 @@ public class Match_InfoDao {
 		} catch (Exception e) {
 			return "SOMETHING WENTS WRONG";
 		}
-//		for (Match_Info match : matchs) {
-//			if (match.getMatchId() == matchId) {
-//				return match;
-//			}
-//
-//		}
-//		return null;
+
 	}
 //-----------------------------------------------------------
 
@@ -86,20 +67,6 @@ public class Match_InfoDao {
 			// TODO: handle exception
 		}
 
-//		for (Match_Info match : matchs) {
-//			if (match.getMatchId() == id) {
-//				int index = matchs.indexOf(match);
-//				matchs.set(index, matchList);
-//
-////			if (match.getMatch_InfoId().equals(id)) {
-////				match.setMatch_InfoName(matchList.getMatch_InfoName());
-////				match.setCity(matchList.getCity());
-////				match.setCoach(matchList.getCoach());
-//				return matchList;
-//			}
-//		}
-//		return "Update Id not found";
-
 	}
 
 //------------------------------------------------------------------
@@ -110,7 +77,7 @@ public class Match_InfoDao {
 		try {
 			if (DBMatch_Info != null) {
 				openSession.remove(DBMatch_Info);
-				return "Match deleted successfully";
+				return "Match Deleted Successfully ";
 			} else {
 				return " Match Not Found";
 			}
@@ -118,13 +85,6 @@ public class Match_InfoDao {
 			return "SOMETHING WENTS WRONG";
 			// TODO: handle exception
 		}
-
-//		for (Match_Info match : matchs) {
-//			if (match.getMatchId() == id) {
-//				matchs.remove(match);
-//			}
-//		}
-//		return "Match_Info deleted Successfully";
 
 	}
 //-------------------------------------------------------------------

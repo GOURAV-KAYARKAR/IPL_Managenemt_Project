@@ -15,20 +15,11 @@ public class PlayerDao {
 	@Autowired
 	private SessionFactory sessionFactory;
 
-//	List<Player> players = new ArrayList<Player>();
-//	 public PlayerDao() {
-//	        // Adding the given player data to the players list
-//	        players.add(new Player(1, "Rohit Sharma", 33, "MI", "Batsman"));
-//	        players.add(new Player(2, "MS Dhoni", 39, "CSK", "Wicketkeeper-Batsman"));
-//	    }
-
 	public String addPlayer(Player player) {
 		Session openSession = sessionFactory.openSession();
 		openSession.save(player);
 		return "Player Added Successuflly";
 
-		// players.add(player);
-//		return "Player Added sussfully";
 	}
 
 	// -----------------------------------------
@@ -39,7 +30,7 @@ public class PlayerDao {
 		list = criteria.list();
 
 		return list;
-//		return players;
+
 	}
 //-------------------------------------------------
 
@@ -57,13 +48,6 @@ public class PlayerDao {
 		} catch (Exception e) {
 			return "SOMETHING WENTS WRONG";
 
-//		for (Player player : players) {
-//			if (player.getPlayerId() == playerId) {
-//				return player;
-//			}
-//
-//		}
-//		return null;
 		}
 	}
 //-----------------------------------------------------------
@@ -88,20 +72,6 @@ public class PlayerDao {
 			// TODO: handle exception
 		}
 
-//		for (Player player : players) {
-//			if (player.getPlayerId() == id) {
-//				int index = players.indexOf(player);
-//				players.set(index, playerList);
-//
-////			if (player.getPlayerId().equals(id)) {
-////				player.setPlayerName(playerList.getPlayerName());
-////				player.setCity(playerList.getCity());
-////				player.setCoach(playerList.getCoach());
-//				return playerList;
-//			}
-//		}
-//		return "Update Id not found";
-
 	}
 
 //------------------------------------------------------------------
@@ -120,13 +90,6 @@ public class PlayerDao {
 			return "SOMETHING WENTS WRONG";
 			// TODO: handle exception
 		}
-
-//		for (Player player : players) {
-//			if (player.getPlayerId() == id) {
-//				players.remove(player);
-//			}
-//		}
-//		return "Player deleted Successfully";
 
 	}
 //-------------------------------------------------------------------
